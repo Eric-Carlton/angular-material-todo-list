@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
-import { TodoListDataService } from '../../services/todoListData/todo-list-data.service'
-import { TodoItem } from '../../models/todo-item.model'
+import { TodoListDataService } from '../../services/todoListData/todo-list-data.service';
+import { TodoItem } from '../../models/todo-item.model';
 
 @Component({
-  selector: 'todo-list',
+  selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css'],
   providers: [TodoListDataService]
 })
 export class TodoListComponent {
-  newTodo: string = '';
-  errorMessage: string = '';
+  newTodo = '';
+  errorMessage = '';
 
   constructor(private todoListDataService: TodoListDataService) { }
 
   get todoList(): TodoItem[] {
-    return this.todoListDataService.todoList
+    return this.todoListDataService.todoList;
   }
 
   addTodo() {
@@ -23,7 +23,7 @@ export class TodoListComponent {
       this.todoListDataService.addTodoItemWithTodo(this.newTodo);
       this.newTodo = '';
     } else {
-      this.errorMessage = "Can't add empty todo!"
+      this.errorMessage = 'Can\'t add empty todo!';
     }
   }
 

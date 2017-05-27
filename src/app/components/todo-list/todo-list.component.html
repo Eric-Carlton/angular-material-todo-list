@@ -14,7 +14,7 @@
   <md-grid-list cols="5" gutterSize="1em">
     <md-grid-tile *ngFor="let item of todoList" [class.completed]="item.completed">
       <md-grid-tile-header>
-        <md-checkbox class="complete-todo-btn" (click)="toggleTodoComplete(item)">Mark Complete</md-checkbox>
+        <md-checkbox class="complete-todo-btn" (click)="toggleTodoComplete(item)">Completed</md-checkbox>
       </md-grid-tile-header>
       <div>{{item.todo}}</div>
       <md-grid-tile-footer>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {TodoItem} from '../../models/todo-item.model';
+import { TodoItem } from '../../models/todo-item.model';
 
 @Injectable()
 export class TodoListDataService {
@@ -7,7 +7,7 @@ export class TodoListDataService {
   todoList: TodoItem[];
 
 
-  constructor() { 
+  constructor() {
     this.nextTodoItemId = 0;
     this.todoList = [];
   }

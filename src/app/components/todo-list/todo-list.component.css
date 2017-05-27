@@ -1,0 +1,36 @@
+.add-todo-form {
+    margin: auto;
+    max-width: 80%;
+}
+
+header {
+    text-align: center;
+}
+
+.add-todo-form {
+    min-height: 100px;
+}
+
+.add-todo-form md-input-container {
+    width: 80%;
+    margin-right: 1em;
+}
+
+md-chip {
+    margin: auto;
+}
+
+md-grid-tile {
+    color: white;
+    background-color: #673ab7;
+}
+
+md-grid-tile.completed { 
+   background-color: #ffd740;
+   color: black;
+}
+
+md-grid-tile-header > *, md-grid-tile-footer > * {
+    padding: 0 16px;
+    margin: auto;
+}

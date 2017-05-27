@@ -1,0 +1,25 @@
+<section class="todo-list">
+  <header>
+    <h1>Todo List</h1>
+    <section class="add-todo-form">
+      <md-input-container class="example-full-width">
+        <input mdInput [(ngModel)]="newTodo" (focus)="errorMessage=''" placeholder="Add a new todo" (keyup.enter)="addTodo()">
+      </md-input-container>
+      <button md-raised-button color="primary" (click)="addTodo()">Add Todo</button>
+      <md-chip-list  [hidden]="errorMessage.length <= 0">
+        <md-chip selected="true" color="warn">{{errorMessage}}</md-chip>
+      </md-chip-list>
+    </section>
+  </header>
+  <md-grid-list cols="5" gutterSize="1em">
+    <md-grid-tile *ngFor="let item of todoList" [class.completed]="item.completed">
+      <md-grid-tile-header>
+        <md-checkbox class="complete-todo-btn" (click)="toggleTodoComplete(item)">Mark Complete</md-checkbox>
+      </md-grid-tile-header>
+      <div>{{item.todo}}</div>
+      <md-grid-tile-footer>
+        <button class="remove-todo-btn" md-raised-button color="accent" (click)="removeTodo(item)">Remove Todo</button>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+  </md-grid-list>
+</section>
